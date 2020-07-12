@@ -68,6 +68,7 @@ server.get('/search', (req, res) => {
 
 
     const search = req.query.search
+    console.log(search)
 
     if (search == "") {
         db.all(`SELECT * FROM places`, function (err, rows) {

@@ -34,7 +34,7 @@ function getCities(event) {
 
         citySelect.disabled = false
     })
-
+    console.log(stateInput.value);
 }
 
 populateUFs()
