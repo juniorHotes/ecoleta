@@ -1,0 +1,28 @@
+<div id="modal" class="hide">
+    <div class="content">
+        <div class="header">
+            <h1>Pontos de coleta</h1>
+            <a href="#">Fechar</a>
+        </div>
+        <p>Encontre pontos de coleta em sua cidade</p>
+
+        <form action="/search">
+            <label for="state">Estado</label>
+            <div class="search field">
+                <select name="uf">
+                    <option value="">Selecione o Estado</option>
+                </select>
+            </div>
+            <label for="city">Cidade</label>
+            <div class="search field">
+                <select name="city" disabled="disabled">
+                    <option value="">Selecione a Cidade</option>
+                </select>
+                <button>
+                    <img src="/assets/search.svg" alt="Buscar" title="Pesquisar">
+                </button>
+            </div>
+            <input type="hidden" name="state" value="">
+        </form>
+    </div>
+</div>
