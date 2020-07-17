@@ -66,11 +66,9 @@ server.post('/savepoint', (req, res) => {
 // Pesquisar pontos de coleta
 server.get('/search', (req, res) => {
 
+    const search = req.query.city
 
-    const search = req.query.search
-    console.log(search)
-
-    if (search == "") {
+    if (search == "" || search == null) {
         db.all(`SELECT * FROM places`, function (err, rows) {
             if (err) {
                 return console.log(err)
@@ -97,6 +95,36 @@ server.get('/search', (req, res) => {
 
         })
     }
+})
+server.get('/admin', (req, res) => {
+
+    const excluir = req.query.excluir
+    console.log("Excluido: " + excluir)
+    
+    if (excluir != null) {
+        //#region Deletar dados
+        db.run(`DELETE FROM places WHERE id = ?`, [excluir], function (err) {
+            if (err) {
+                return console.log(err)
+            }
+            console.log(`Registro ${excluir} deletado com sucesso`)
+
+            excluir = null
+        })
+        //#endregion Deletar dados
+    }
+
+    db.all(`SELECT * FROM places`, function (err, rows) {
+        if (err) {
+            return console.log(err)
+        }
+        const data = rows
+        //console.log("Aqui estão seus registros")
+        //console.log(data)
+
+        return res.render('admin.html', { data })
+    })
+    
 })
 //#endregion Criar rotas
 

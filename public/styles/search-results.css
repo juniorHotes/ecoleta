@@ -45,28 +45,38 @@ main .cards {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 24px;
 }
+main .card {
+    height: 380px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px 8px 0 0;
+    display: grid;
+    grid-template-rows: auto 1fr 1fr 1fr;
+}
 main .cards img {
     width: 100%;
     height: 150px;
     object-fit: cover;
     border-radius: 8px 8px 0 0;
 }
+main .cards h1, h3, p {
+    margin-left: 6px;
+}
 main .cards h1 {
-    margin-top: 32px;
-    font-size: 36px;
-    line-height: 41px;
+    margin-top: 6px;
+    font-size: 32px;
     color: #322153;
 }
 main .cards h3 {
-    margin: 24px 0;
-    font-family: Roboto;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
-    font-size: 24px;
-    line-height: 34px;
+    font-size: 18px;
     color: var(--primary-color);
 }
 main .cards p {
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 12px;
     color: #6c6c80;
+    
 }

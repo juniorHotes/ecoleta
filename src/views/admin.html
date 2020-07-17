@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt_br" data-it-installed="true">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+
+    <title>Ecoleta - banco de dados</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .content-page {
+            width: 95%;
+            margin: 0 auto;
+        }
+        .content-page h3 {
+            width: 200px;
+            padding: 10px;
+            background-color: #34cb79;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .content-page h3 a {
+            text-decoration: none;
+            color: white;
+        }
+        table caption, th, h1 {
+            font-family: 'Ubuntu', sans-serif;
+        }
+        table, caption, tr, th, td{
+            border: 1px solid #502c6e;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+        caption {
+            font-size: 22px;
+            color: white;
+            background-color: #8e51c0;
+        }
+        tr th {
+            background-color: #34cb79;
+        }
+        table tr:nth-child(even) {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="content-page">
+            <h3><a href="/">Ir para a página inicial</a></h3>
+            <h1>Banco de dados</h1>
+            <table>
+                <caption>Dados das instituições</caption>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Endereço</th>
+                    <th>Complemento</th>
+                    <th>Estado</th>
+                    <th>Cidade</th>
+                    <th>Tipos de itens</th>
+                    <th></th>
+                    <th></th>    
+                </tr>
+            {% for db in data %}
+                <tr> 
+                    <td>{{db.id}}</td>
+                    <td>{{db.name}}</td>
+                    <td>{{db.address}}</td>
+                    <td>{{db.address2}}</td>
+                    <td>{{db.state}}</td>
+                    <td>{{db.city}}</td>
+                    <td>{{db.items}}</td>
+                    <td><a href="editar">Editar</a></td>
+                    <td><a href="/admin?excluir={{db.id}}">Excluir</a></td>
+                </tr>
+            {% endfor %}
+            </table>
+        </div>
+    </main>
+</body>
+</html>
