@@ -23,9 +23,8 @@ server.get('/', (req, res) => {
 })
 server.get('/create-point', (req, res) => {
 
-    console.log(req.query)
-
     return res.render('create-point.html')
+
 })
 // Ao finalizar cadastro
 server.post('/savepoint', (req, res) => {
@@ -66,15 +65,13 @@ server.post('/savepoint', (req, res) => {
 // Pesquisar pontos de coleta
 server.get('/search', (req, res) => {
 
-    const search = req.query.city
+    const city = req.query.city
 
-    if (search == "" || search == null) {
+    if (city == "" || city == null) {
         db.all(`SELECT * FROM places`, function (err, rows) {
             if (err) {
                 return console.log(err)
             }
-            console.log("Aqui estão seus registros")
-            console.log(rows)
 
             const total = rows.length
 
@@ -82,12 +79,10 @@ server.get('/search', (req, res) => {
 
         })
     } else {
-        db.all(`SELECT * FROM places WHERE city LIKE '%${search}%'`, function (err, rows) {
+        db.all(`SELECT * FROM places WHERE city LIKE '%${city}%'`, function (err, rows) {
             if (err) {
                 return console.log(err)
             }
-            console.log("Aqui estão seus registros")
-            console.log(rows)
 
             const total = rows.length
 
@@ -99,7 +94,6 @@ server.get('/search', (req, res) => {
 server.get('/admin', (req, res) => {
 
     const excluir = req.query.excluir
-    console.log("Excluido: " + excluir)
     
     if (excluir != null) {
         //#region Deletar dados
@@ -108,19 +102,16 @@ server.get('/admin', (req, res) => {
                 return console.log(err)
             }
             console.log(`Registro ${excluir} deletado com sucesso`)
-
-            excluir = null
         })
         //#endregion Deletar dados
     }
+    console.log("Excluido: " + excluir)
 
     db.all(`SELECT * FROM places`, function (err, rows) {
         if (err) {
             return console.log(err)
         }
         const data = rows
-        //console.log("Aqui estão seus registros")
-        //console.log(data)
 
         return res.render('admin.html', { data })
     })

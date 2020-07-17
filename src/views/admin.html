@@ -11,7 +11,7 @@
             font-family: 'Roboto', sans-serif;
         }
         .content-page {
-            width: 95%;
+            max-width: 1300px;
             margin: 0 auto;
         }
         .content-page h3 {
@@ -51,7 +51,7 @@
         <div class="content-page">
             <h3><a href="/">Ir para a página inicial</a></h3>
             <h1>Banco de dados</h1>
-            <table>
+            <table width="100%">
                 <caption>Dados das instituições</caption>
                 <tr>
                     <th>ID</th>
@@ -61,7 +61,6 @@
                     <th>Estado</th>
                     <th>Cidade</th>
                     <th>Tipos de itens</th>
-                    <th></th>
                     <th></th>    
                 </tr>
             {% for db in data %}
@@ -73,7 +72,6 @@
                     <td>{{db.state}}</td>
                     <td>{{db.city}}</td>
                     <td>{{db.items}}</td>
-                    <td><a href="editar">Editar</a></td>
                     <td><a href="/admin?excluir={{db.id}}">Excluir</a></td>
                 </tr>
             {% endfor %}
