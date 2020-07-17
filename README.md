@@ -3,11 +3,11 @@
 O Ecoleta é um marketplace que ajuda pessoas a encontrarem pontos de coleta de resíduos de forma eficiente.
 
 <p align="center" float="left">
-  <img alt="Imagem da pagina inicial" src="splash/Pagina inicial.png" width="150">
-  <img alt="Imagem da pagina inicial" src="splash/Pagina de cadastro.png" width="150">
-  <img alt="Imagem da pagina inicial" src="splash/Pagina de pesquisa.png" width="150">
-  <img alt="Imagem da pagina inicial" src="splash/Pagina de resultados.png" width="150">
-  <img alt="Imagem da pagina inicial" src="splash/Pagina de admin.png" width="150">
+  <img alt="Imagem da pagina inicial" src="splash/Pagina inicial.png" width="250">
+  <img alt="Imagem da pagina inicial" src="splash/Pagina de cadastro.png" width="250">
+  <img alt="Imagem da pagina inicial" src="splash/Pagina de pesquisa.png" width="250">
+  <img alt="Imagem da pagina inicial" src="splash/Pagina de resultados.png" width="250">
+  <img alt="Imagem da pagina inicial" src="splash/Pagina de admin.png" width="250">
 </p>
 
 ## Funcionalidades
