@@ -11,6 +11,7 @@ html {
     font-family: 'Roboto', sans-serif;
 }
 body {
+    width: 100%;
     background: #f0f0f5;
     -webkit-font-smoothing: antialiased;
 }
